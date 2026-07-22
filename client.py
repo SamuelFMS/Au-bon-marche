@@ -1,6 +1,11 @@
+from fruit_and_vegetable import Fruit_And_Vegetable
+from command import Command
+
 class Client:
     first_name: str
     last_name: str
+    list_fruit_vegetable: list[Fruit_And_Vegetable]
+    my_basket : Command 
     
     def __init__(self, first_name, last_name):
         self.first_name = first_name
