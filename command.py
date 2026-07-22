@@ -2,9 +2,9 @@ from fruitvegetable import Fruitvegetable
 
 
 class Command:
-    basket: list[FruitAndVegetable]
+    basket: list[Fruitvegetable]
 
-    def __init__(self, basket: list[FruitAndVegetable] = []):
+    def __init__(self, basket: list[Fruitvegetable] = []):
         self.basket = basket
 
     def __str__(self) -> str:
