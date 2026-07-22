@@ -4,7 +4,9 @@ from fruitvegetable import Fruitvegetable
 class Command:
     basket: list[Fruitvegetable]
 
-    def __init__(self, basket: list[Fruitvegetable] = []):
+    def __init__(self, basket: list[Fruitvegetable]|None = None):
+        if basket is None:
+            basket = []
         self.basket = basket
 
     def __str__(self) -> str:
