@@ -10,6 +10,7 @@ class Command:
     def __str__(self) -> str:
         if len(self.basket) == 0:
             return "Mon panier est vide"
-        print("Panier : ")
+        res: str = "Panier : \n"
         for b in self.basket:
-            print(b)
+            res+= f"{b}"
+        return res
