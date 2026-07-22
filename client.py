@@ -12,3 +12,11 @@ class Client:
         self.last_name = last_name
         self.list_fruit_vegetable = list_fruit_vegetable
         self.my_basket = my_basket
+    
+    def __str__(self):
+        return (
+            f"- Information Personelle -\n"
+            f"Prénom: {self.first_name}\n"
+            f"Nom: {self.last_name}\n"
+            f"{self.my_basket}"
+            )
