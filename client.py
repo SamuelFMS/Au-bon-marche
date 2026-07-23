@@ -1,3 +1,4 @@
+import shop
 from fruitvegetable import FruitVegetable
 from command import Command
 from shop import Shop
@@ -15,6 +16,12 @@ class Client:
         self.last_name = last_name
         self.shop = shop
         self.my_basket = my_basket
+
+    @staticmethod
+    def register_user() -> Client:
+        first_name = input("Veuillez entrez le prenom: ")
+        last_name = input("Veuillez entrez le nom: ")
+        return Client(first_name, last_name)
 
     def add_to_basket(self):
         print(self.shop)
