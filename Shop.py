@@ -5,7 +5,7 @@ from fruitvegetable import FruitVegetable
 
 
 @dataclass
-class Product:
+class Shop:
     product_list: ClassVar[list["FruitVegetable"]]
 
     def __post_init__(self):
