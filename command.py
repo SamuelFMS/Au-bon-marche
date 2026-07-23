@@ -1,10 +1,10 @@
-from fruitvegetable import Fruitvegetable
+from fruitvegetable import FruitVegetable
 
 
 class Command:
-    basket: list[Fruitvegetable]
+    basket: list[FruitVegetable]
 
-    def __init__(self, basket: list[Fruitvegetable] | None = None):
+    def __init__(self, basket: list[FruitVegetable] | None = None):
         if basket is None:
             basket = []
         self.basket = basket
