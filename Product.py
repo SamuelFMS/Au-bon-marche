@@ -31,3 +31,15 @@ class Product:
             FruitVegetable("Radis noir", 10, 5, True),
             FruitVegetable("Salsifis", 3_000, 2.5, False)
         ]
+
+    def __str__(self) -> str:
+        display_bilan: str = "Voici le sock disponible:\n"
+
+        for product in self.product_list:
+            display_bilan += f"{product.name}: {product.quantity}"
+            if product.is_unit:
+                display_bilan += " pièces"
+            else:
+                display_bilan += "g"
+
+        return display_bilan
