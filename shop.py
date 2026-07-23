@@ -1,12 +1,10 @@
-from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import ClassVar
 from fruitvegetable import FruitVegetable
 
 
 @dataclass
 class Shop:
-    product_list: ClassVar[list["FruitVegetable"]]
+    product_list: list[FruitVegetable]
 
     def __init__(self, product_list=None):
         if product_list is None:
