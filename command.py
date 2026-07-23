@@ -17,5 +17,14 @@ class Command:
             res += b.__str__()
         return res
 
+    def price_of_basket(self):
+        price = 0
+        for fv in self.basket:
+            if fv.is_unit:
+                price += fv.price * fv.quantity
+            else:
+                price += fv.price / 1000 * fv.quantity
+        return price
+
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
         self.basket.append(fruit_vegetable)
