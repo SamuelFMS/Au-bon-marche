@@ -33,16 +33,16 @@ class Shop:
         self.product_list: list[FruitVegetable] = product_list
 
     def __str__(self) -> str:
-        display_bilan: str = "Voici le sock disponible:\n"
+        display_balance_sheet: str = "Voici le stock disponible:\n"
 
         for product in self.product_list:
-            display_bilan += f"{product.name}: {product.quantity}"
+            display_balance_sheet += f"{product.name}: {product.quantity}"
             if product.is_unit:
-                display_bilan += " pièces"
+                display_balance_sheet += " pièces"
             else:
-                display_bilan += "g"
+                display_balance_sheet += "g"
 
-        return display_bilan
+        return display_balance_sheet
 
     def nb_fruit_vegetable(self):
         return len(self.product_list)
