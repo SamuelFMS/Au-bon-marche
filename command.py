@@ -35,4 +35,9 @@ class Command:
         return round(price, 2)
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
+        """
+        Add a fruit or a vegetable to a basket.
+
+        :param fruit_vegetable: The fruit or vegetable to add
+        """
         self.basket.append(fruit_vegetable)
