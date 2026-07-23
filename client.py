@@ -10,6 +10,9 @@ import copy
 class Client:
     clients: ClassVar[list[Client]] = []
 
+    def __post_init__(self):
+        Client.clients.append(self)
+
     def __init__(self):
         self.first_name: str = ""
         self.last_name: str = ""
