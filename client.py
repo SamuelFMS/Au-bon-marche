@@ -7,9 +7,9 @@ from shop import Shop
 import copy
 
 
-class Client:  #Create a Client class.
+class Client:  # Create a Client class.
 
-    clients: ClassVar[list[Client]] = []  #The variable clients is a list of client.
+    clients: ClassVar[list[Client]] = []  # The variable clients is a list of client.
 
     def __init__(self):
         """
@@ -20,7 +20,7 @@ class Client:  #Create a Client class.
         self.my_basket: Command = Command()
         Client.clients.append(self)
 
-    def __str__(self) -> str:  #Create a method __str__ in order to display
+    def __str__(self) -> str:  # Create a method __str__ in order to display
         return (
             f"- Information Personelle -\n"
             f"Prénom: {self.first_name}\n"
@@ -33,14 +33,14 @@ class Client:  #Create a Client class.
         print("Liste des clients\nPrénom, NOM")
         for client in cls.clients:
             print(f"{client.first_name.capitalize()}, {client.last_name.upper()}")
-            
+
     @classmethod
     def get_price_total(cls) -> float:
         total = 0
         for client in cls.clients:
             total += client.my_basket.price_of_basket()
         return total
-    
+
     def register_user(self):
         self.first_name = input("Veuillez entrez le prenom: ")
         self.last_name = input("Veuillez entrez le nom: ")
