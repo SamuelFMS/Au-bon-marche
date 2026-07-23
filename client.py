@@ -11,16 +11,16 @@ class Client:  #Create a Client class.
 
     clients: ClassVar[list[Client]] = []  #The variable clients is a list of client.
 
-    def __post_init__(self):  #Create a __post_init__ method in order to initialise Clients list.
+    def __init__(self):
+        """
+        Initialise first_name, last_name and my_basket.
+        """
+        self.first_name: str = ""
+        self.last_name: str = ""
+        self.my_basket: Command = Command()
         Client.clients.append(self)
 
-    def __init__(self):  #Create a __init__ method in order to initialise a Client attribute.
-
-        self.first_name: str = ""  #First name of a client.
-        self.last_name: str = ""  #Last name of a client.
-        self.my_basket: Command = Command()  #Basket of a client.
-
-    def __str__(self) -> str:  #Create
+    def __str__(self) -> str:  #Create a method __str__ in order to display
         return (
             f"- Information Personelle -\n"
             f"Prénom: {self.first_name}\n"
