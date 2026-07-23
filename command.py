@@ -25,7 +25,7 @@ class Command:
                 price += fv.price * fv.quantity
             else:
                 price += fv.price / 1000 * fv.quantity
-        return price
+        return round(price, 2)
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
         self.basket.append(fruit_vegetable)
