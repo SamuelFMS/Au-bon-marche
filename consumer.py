@@ -1,7 +1,7 @@
 from client import Client
 
 
-class consumer:
+class Consumer:
     clients: list[Client]
 
     def __init__(self, clients: list[Client] = []):
