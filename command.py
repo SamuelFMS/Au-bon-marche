@@ -21,10 +21,7 @@ class Command:
     def price_of_basket(self):
         price = 0
         for fv in self.basket:
-            if fv.is_unit:
-                price += fv.price * fv.quantity
-            else:
-                price += fv.price / 1000 * fv.quantity
+            price += fv.price_remain_stock_fruitvegetable()
         return round(price, 2)
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
