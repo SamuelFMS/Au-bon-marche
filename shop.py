@@ -5,6 +5,11 @@ class Shop:
     product_list: list[FruitVegetable]
 
     def __init__(self, product_list=None):
+        """
+        Create a list of products that includes fruits and vegetables
+
+        :param product_list: List of fruits and vegetables
+        """
         if product_list is None:
             product_list = [
                 FruitVegetable("Clémentine", 6_000, 2.9, False),
@@ -40,7 +45,17 @@ class Shop:
         return display_balance_sheet
 
     def nb_fruit_vegetable(self) -> int:
+        """
+        Number of fruits and vegetables
+
+        :return: Number of fruits and vegetables
+        """
         return len(self.product_list)
 
     def get_list_name(self) -> list[str]:
+        """
+        Retrieve all the names of fruits and vegetables on the list
+
+        :return: Names of fruits and vegetables
+        """
         return [fruit_vegetable.name for fruit_vegetable in self.product_list]
