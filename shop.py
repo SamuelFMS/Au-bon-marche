@@ -1,8 +1,6 @@
-from dataclasses import dataclass
 from fruitvegetable import FruitVegetable
 
 
-@dataclass
 class Shop:
     product_list: list[FruitVegetable]
 
@@ -37,11 +35,7 @@ class Shop:
         display_balance_sheet += "Voici le stock disponible:\n"
 
         for product in self.product_list:
-            display_balance_sheet += f"{product.name}: {product.quantity}"
-            if product.is_unit:
-                display_balance_sheet += " pièces\n"
-            else:
-                display_balance_sheet += "g\n"
+            display_balance_sheet += product.__str__()
 
         return display_balance_sheet
 
