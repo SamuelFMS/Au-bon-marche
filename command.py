@@ -16,3 +16,6 @@ class Command:
         for b in self.basket:
             res += f"{b}"
         return res
+
+    def add_to_basket(self, fruitvegetable: Fruitvegetable):
+        self.basket.append(fruitvegetable)
