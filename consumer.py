@@ -1,0 +1,2 @@
+class consumer:
+    pass
