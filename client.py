@@ -48,6 +48,7 @@ class Client:
         if quantity != 0:
             copy_fruit_vegetable = copy.copy(res)
             copy_fruit_vegetable.quantity = quantity
+            res.quantity -= quantity
             self.my_basket.add_to_basket(copy_fruit_vegetable)
 
     def __str__(self):
