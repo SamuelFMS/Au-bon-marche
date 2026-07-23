@@ -11,11 +11,14 @@ class Client:
         self.last_name: str = ""
         self.my_basket: Command = Command()
 
-    def __init__(self, first_name: str, last_name: str, my_basket: Command = Command(), shop: Shop = Shop()):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.shop = shop
-        self.my_basket = my_basket
+    def __str__(self):
+        return (
+            f"- Information Personelle -\n"
+            f"Prénom: {self.first_name}\n"
+            f"Nom: {self.last_name}\n"
+            f"{self.my_basket}\n"
+            f"{self.my_basket.price_of_basket()}"
+        )
 
     @staticmethod
     def register_user() -> Client:
