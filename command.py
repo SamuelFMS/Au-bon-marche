@@ -17,5 +17,5 @@ class Command:
             res += f"{b}"
         return res
 
-    def add_to_basket(self, fruitvegetable: Fruitvegetable):
-        self.basket.append(fruitvegetable)
+    def add_to_basket(self, fruit_vegetable: FruitVegetable):
+        self.basket.append(fruit_vegetable)
