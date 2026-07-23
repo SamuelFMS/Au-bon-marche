@@ -2,6 +2,8 @@ from fruitvegetable import FruitVegetable
 from command import Command
 from shop import Shop
 
+import copy
+
 
 class Client:
     def __init__(self):
@@ -15,13 +17,11 @@ class Client:
             f"Prénom: {self.first_name}\n"
             f"Nom: {self.last_name}\n"
             f"{self.my_basket}\n"
-            f"{self.my_basket.price_of_basket()}"
         )
 
-    @classmethod
-    def register_user(cls):
-        cls.first_name = input("Veuillez entrez le prenom: ")
-        cls.last_name = input("Veuillez entrez le nom: ")
+    def register_user(self):
+        self.first_name = input("Veuillez entrez le prenom: ")
+        self.last_name = input("Veuillez entrez le nom: ")
 
     def add_to_basket(self, shop: Shop) -> Shop:
         print(shop)
@@ -47,7 +47,7 @@ class Client:
             else:
                 print("Veuillez entrez un nombre valide")
 
-        self.my_basket.add_to_basket(res)
+        self.my_basket.add_to_basket(copy.copy(res))
         shop.product_list[index_fruit_vegetable].quantity -= quantity
 
         return shop
