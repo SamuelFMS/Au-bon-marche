@@ -1,8 +1,6 @@
-import shop
 from fruitvegetable import FruitVegetable
 from command import Command
 from shop import Shop
-import copy
 
 
 class Client:
@@ -25,39 +23,31 @@ class Client:
         cls.first_name = input("Veuillez entrez le prenom: ")
         cls.last_name = input("Veuillez entrez le nom: ")
 
-    def add_to_basket(self):
-        print(self.shop)
+    def add_to_basket(self, shop: Shop) -> Shop:
+        print(shop)
         while True:
             sass = input("Veuillez entrez le nom de l'article souhaitez: ")
-            # Méthode a deplacer dans shop? return_article_in_shop(string)
-            if sass in self.shop.get_list_name():
+
+            if sass in shop.get_list_name():
                 break
             print("Nous avons pas réussis a trouver l'article souhaitez")
 
-        res: FruitVegetable = self.shop.product_list[self.shop.get_list_name().index(sass)]
-
+        index_fruit_vegetable: int = shop.get_list_name().index(sass)
+        res: FruitVegetable = shop.product_list[index_fruit_vegetable]
         quantity: int
+
         while True:
             sass = input(f"Veuillez saisir la quantité({"unit" if res.is_unit else "g"}): ")
+
             if sass.isdigit():
                 quantity = int(sass)
-                if quantity <= res.quantity:
+                if 0 < quantity <= res.quantity:
                     break
-                else:
-                    print("Nous avons plus assez dans le stock")
+                print("Nous avons plus assez dans le stock")
             else:
                 print("Veuillez entrez un nombre valide")
 
-        if quantity != 0:
-            copy_fruit_vegetable = copy.copy(res)
-            copy_fruit_vegetable.quantity = quantity
-            res.quantity -= quantity
-            self.my_basket.add_to_basket(copy_fruit_vegetable)
+        self.my_basket.add_to_basket(res)
+        shop.product_list[index_fruit_vegetable].quantity -= quantity
 
-    def __str__(self):
-        return (
-            f"- Information Personelle -\n"
-            f"Prénom: {self.first_name}\n"
-            f"Nom: {self.last_name}\n"
-            f"{self.my_basket}"
-        )
+        return shop
