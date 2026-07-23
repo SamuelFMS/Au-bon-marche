@@ -43,3 +43,6 @@ class Shop:
                 display_bilan += "g"
 
         return display_bilan
+
+    def nb_fruit_vegetable(self):
+        return len(self.product_list)
