@@ -34,4 +34,10 @@ class FruitVegetable:
         The total price of the remaining stock of the fruitvegetable
         :return: return the total price of the remaining stock of a fruitvegetable.
         """
-        return self.quantity / 1000 * self.price
+
+        if self.is_unit:
+            price_stock_remain_fruit_vegetable = self.quantity * self.price
+        else:
+            price_stock_remain_fruit_vegetable = self.quantity / 1000 * self.price
+
+        return price_stock_remain_fruit_vegetable
