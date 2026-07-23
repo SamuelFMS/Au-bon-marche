@@ -20,11 +20,10 @@ class Client:
             f"{self.my_basket.price_of_basket()}"
         )
 
-    @staticmethod
-    def register_user() -> Client:
-        first_name = input("Veuillez entrez le prenom: ")
-        last_name = input("Veuillez entrez le nom: ")
-        return Client(first_name, last_name)
+    @classmethod
+    def register_user(cls):
+        cls.first_name = input("Veuillez entrez le prenom: ")
+        cls.last_name = input("Veuillez entrez le nom: ")
 
     def add_to_basket(self):
         print(self.shop)
