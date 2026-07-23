@@ -20,14 +20,14 @@ class FruitVegetable:
 
         :return: return a string representation of the fruitvegetable.
         """
-        display_fruit_vegatable: str = f"{self.name}: {self.quantity}"
+        display_fruit_vegetable: str = f"{self.name}: {self.quantity}"
 
         if self.is_unit:
-            display_fruit_vegatable += " pièces\n"
+            display_fruit_vegetable += " pièces\n"
         else:
-            display_fruit_vegatable += "g\n"
+            display_fruit_vegetable += "g\n"
 
-        return display_fruit_vegatable
+        return display_fruit_vegetable
 
     def price_remain_stock(self) -> float:
         """
