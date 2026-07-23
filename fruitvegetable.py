@@ -28,3 +28,10 @@ class FruitVegetable:
             display_fruit_vegatable += "g\n"
 
         return display_fruit_vegatable
+
+    def price_remain_stock_fruitvegetable(self) -> float:
+        """
+        The total price of the remaining stock of the fruitvegetable
+        :return: return the total price of the remaining stock of a fruitvegetable.
+        """
+        return self.quantity / 1000 * self.price
