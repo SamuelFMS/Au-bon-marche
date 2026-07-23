@@ -4,8 +4,8 @@ from client import Client
 class Consumer:
     clients: list[Client]
 
-    def __init__(self, clients: list[Client] = []):
-        self.clients = clients
+    def __init__(self):
+        self.clients = []
 
     def __str__(self):  
         res: str = "Liste des clients\nPrénom, NOM\n"
