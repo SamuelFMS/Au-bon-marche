@@ -29,7 +29,14 @@ class Client:
         print("Liste des clients\nPrénom, NOM")
         for client in cls.clients:
             print(f"{client.first_name.capitalize()}, {client.last_name.upper()}")
-
+            
+    @classmethod
+    def get_price_total(cls):
+        total = 0
+        for client in cls.clients:
+            total += client.my_basket.price_of_basket()
+        return total
+    
     def register_user(self):
         self.first_name = input("Veuillez entrez le prenom: ")
         self.last_name = input("Veuillez entrez le nom: ")
