@@ -12,3 +12,6 @@ class consumer:
         for client in self.clients:
             res += f"{client.first_name.capitalize()}, {client.last_name.upper()} \n"
         return res
+    
+    def add_client(self, client):
+        self.clients.append(client)
