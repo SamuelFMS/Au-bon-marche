@@ -35,7 +35,7 @@ class Client:
 
         quantity: int = 0
         while True:
-            sass = input(f"Veuillez saisir la quantité({"unit" if res.is_unit else "kg"}): ")
+            sass = input(f"Veuillez saisir la quantité({"unit" if res.is_unit else "g"}): ")
             if sass.isdigit():
                 quantity = int(sass)
                 if quantity <= res.quantity:
