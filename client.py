@@ -51,3 +51,12 @@ class Client:
         shop.product_list[index_fruit_vegetable].quantity -= quantity
 
         return shop
+
+    @staticmethod
+    def end_command():
+        while True:
+            input_user = input("Est-ce que vous continuez votre commande ? [Y/n]")
+            if input_user.lower() == 'y' or input_user == '':
+                return False
+            if input_user == 'n':
+                return True
