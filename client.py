@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from fruitvegetable import FruitVegetable
 from command import Command
 from shop import Shop
@@ -6,10 +8,13 @@ import copy
 
 
 class Client:
+    clients: ClassVar[list[Client]] = []
+
     def __init__(self):
         self.first_name: str = ""
         self.last_name: str = ""
         self.my_basket: Command = Command()
+        Client.clients.append(self)
 
     def __str__(self):
         return (
@@ -18,6 +23,12 @@ class Client:
             f"Nom: {self.last_name}\n"
             f"{self.my_basket}\n"
         )
+
+    @classmethod
+    def afficher_liste_clients(cls):
+        print("Liste des clients\nPrénom, NOM")
+        for client in cls.clients:
+            print(f"{client.first_name.capitalize()}, {client.last_name.upper()}")
 
     def register_user(self):
         self.first_name = input("Veuillez entrez le prenom: ")
