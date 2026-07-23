@@ -49,4 +49,4 @@ class Shop:
         return len(self.product_list)
 
     def get_list_name(self) -> list[str]:
-        return [fv.name for fv in self.product_list]
+        return [fruit_vegetable.name for fruit_vegetable in self.product_list]
