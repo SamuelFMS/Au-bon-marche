@@ -14,7 +14,7 @@ class Command:
             return "Mon panier est vide"
         res: str = "Panier : \n"
         for b in self.basket:
-            res += f"{b}"
+            res += b.__str__()
         return res
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
