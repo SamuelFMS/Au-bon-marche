@@ -1,6 +1,6 @@
-from fruitvegetable import Fruitvegetable
+from fruitvegetable import FruitVegetable
 from command import Command
-from Shop import Shop
+from shop import Shop
 import copy
 
 
@@ -18,22 +18,16 @@ class Client:
 
     def add_to_basket(self):
         print(self.shop)
-        res: Fruitvegetable = None
         while True:
             sass = input("Veuillez entrez le nom de l'article souhaitez: ")
             # Méthode a deplacer dans shop? return_article_in_shop(string)
-            res = None
-            for a in self.shop.product_list:
-                if a.name == sass:
-                    res = a
-                    break
-
-            if res is None:
-                print("Nous avons pas réussis a trouver l'article souhaitez")
-            else:
+            if sass in self.shop.get_list_name():
                 break
+            print("Nous avons pas réussis a trouver l'article souhaitez")
 
-        quantity: int = 0
+        res: FruitVegetable = self.shop.product_list[self.shop.get_list_name().index(sass)]
+
+        quantity: int
         while True:
             sass = input(f"Veuillez saisir la quantité({"unit" if res.is_unit else "g"}): ")
             if sass.isdigit():
