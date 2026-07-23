@@ -45,6 +45,11 @@ class Shop:
         return display_balance_sheet
 
     def nb_fruit_vegetable(self) -> int:
+        """
+        Number of fruits and vegetables
+
+        :return: Number of fruits and vegetables
+        """
         return len(self.product_list)
 
     def get_list_name(self) -> list[str]:
