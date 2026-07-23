@@ -17,7 +17,6 @@ class Client:
         self.first_name: str = ""
         self.last_name: str = ""
         self.my_basket: Command = Command()
-        Client.clients.append(self)
 
     def __str__(self):
         return (
