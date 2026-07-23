@@ -1,7 +1,15 @@
 class Fruitvegetable:
-    def __init__(self, namefruitvegetable, quantity, price, is_unit): #definition of the fruitvegetable
-        self.name = namefruitvegetable #name of the fruitvegetable
-        self.quantity = quantity #quantity - number of units / Number of Kilogram
-        self.price = price #price of the vegetable per unit, Example: Kilogram, unit
-        self.is_unit = is_unit # check if it is unit
+    def __init__(self, name_fruit_vegetable: str, quantity: int, price: float,
+                 is_unit: bool):
+        """
+        Definition of a fruitvegetable.
 
+        :param str name_fruit_vegetable: name of the fruitvegetable
+        :param int quantity: quantity - number of units / Number of Kilogram
+        :param float price: price of the vegetable per unit, Example: Kilogram, unit
+        :param bool is_unit: check if it is unit
+        """
+        self.name = name_fruit_vegetable
+        self.quantity = quantity
+        self.price = price
+        self.is_unit = is_unit
