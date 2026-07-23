@@ -23,7 +23,7 @@ class Command:
         res += f"Total de la commande: {self.price_of_basket()}"
         return res
 
-    def price_of_basket(self):
+    def price_of_basket(self) -> float:
         """
         Calculate the total amount of the customer's order.
 
