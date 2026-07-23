@@ -1,8 +1,6 @@
-from dataclasses import dataclass
 from fruitvegetable import FruitVegetable
 
 
-@dataclass
 class Shop:
     product_list: list[FruitVegetable]
 
@@ -37,11 +35,7 @@ class Shop:
         display_balance_sheet += "Voici le stock disponible:\n"
 
         for product in self.product_list:
-            display_balance_sheet += f"{product.name}: {product.quantity}"
-            if product.is_unit:
-                display_balance_sheet += " pièces\n"
-            else:
-                display_balance_sheet += "g\n"
+            display_balance_sheet += product.__str__()
 
         return display_balance_sheet
 
@@ -49,4 +43,4 @@ class Shop:
         return len(self.product_list)
 
     def get_list_name(self) -> list[str]:
-        return [fv.name for fv in self.product_list]
+        return [fruit_vegetable.name for fruit_vegetable in self.product_list]
