@@ -1,4 +1,4 @@
-class Fruitvegetable:
+class FruitVegetable:
     def __init__(self, name_fruit_vegetable: str, quantity: int, price: float,
                  is_unit: bool):
         """
@@ -13,3 +13,11 @@ class Fruitvegetable:
         self.quantity = quantity
         self.price = price
         self.is_unit = is_unit
+
+    def __str__(self) -> str:
+        """
+        The str method is used to return a string representation of a fruitvegetable.
+
+        :return: return a string representation of the fruitvegetable.
+        """
+        return self.name + ", " + str(self.quantity) + ", " + str(self.price) + ", " + str(self.is_unit)
