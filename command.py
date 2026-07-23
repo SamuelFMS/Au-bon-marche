@@ -5,6 +5,11 @@ class Command:
     basket: list[FruitVegetable]
 
     def __init__(self, basket: list[FruitVegetable] | None = None):
+        """
+        Take all Fruits and Vegetables by customer.
+
+        :param basket: Basket of customer.
+        """
         if basket is None:
             basket = []
         self.basket = basket
@@ -19,6 +24,11 @@ class Command:
         return res
 
     def price_of_basket(self):
+        """
+        Calculate the total amount of the customer's order.
+
+        :return: Total amount of the basket.
+        """
         price = 0
         for fv in self.basket:
             price += fv.price_remain_stock()
