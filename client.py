@@ -6,10 +6,10 @@ import copy
 
 
 class Client:
-    first_name: str
-    last_name: str
-    shop: Shop
-    my_basket: Command
+    def __init__(self):
+        self.first_name: str = ""
+        self.last_name: str = ""
+        self.my_basket: Command = Command()
 
     def __init__(self, first_name: str, last_name: str, my_basket: Command = Command(), shop: Shop = Shop()):
         self.first_name = first_name
