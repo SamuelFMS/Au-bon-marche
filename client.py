@@ -7,18 +7,20 @@ from shop import Shop
 import copy
 
 
-class Client:
-    clients: ClassVar[list[Client]] = []
+class Client:  #Create a Client class.
 
-    def __post_init__(self):
+    clients: ClassVar[list[Client]] = []  #The variable clients is a list of client.
+
+    def __post_init__(self):  #Create a __post_init__ method in order to initialise Clients list.
         Client.clients.append(self)
 
-    def __init__(self):
-        self.first_name: str = ""
-        self.last_name: str = ""
-        self.my_basket: Command = Command()
+    def __init__(self):  #Create a __init__ method in order to initialise a Client attribute.
 
-    def __str__(self):
+        self.first_name: str = ""  #First name of a client.
+        self.last_name: str = ""  #Last name of a client.
+        self.my_basket: Command = Command()  #Basket of a client.
+
+    def __str__(self) -> str:  #Create
         return (
             f"- Information Personelle -\n"
             f"Prénom: {self.first_name}\n"
@@ -33,7 +35,7 @@ class Client:
             print(f"{client.first_name.capitalize()}, {client.last_name.upper()}")
             
     @classmethod
-    def get_price_total(cls):
+    def get_price_total(cls) -> float:
         total = 0
         for client in cls.clients:
             total += client.my_basket.price_of_basket()
@@ -73,7 +75,7 @@ class Client:
         return shop
 
     @staticmethod
-    def end_command():
+    def end_command() -> bool:
         while True:
             input_user = input("Est-ce que vous continuez votre commande ? [Y/n]")
             if input_user.lower() == 'y' or input_user == '':
