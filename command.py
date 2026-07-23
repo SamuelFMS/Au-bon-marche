@@ -21,7 +21,7 @@ class Command:
     def price_of_basket(self):
         price = 0
         for fv in self.basket:
-            price += fv.price_remain_stock_fruitvegetable()
+            price += fv.price_remain_stock()
         return round(price, 2)
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
