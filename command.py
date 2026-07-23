@@ -4,7 +4,7 @@ from fruitvegetable import Fruitvegetable
 class Command:
     basket: list[Fruitvegetable]
 
-    def __init__(self, basket: list[Fruitvegetable]|None = None):
+    def __init__(self, basket: list[Fruitvegetable] | None = None):
         if basket is None:
             basket = []
         self.basket = basket
@@ -14,5 +14,5 @@ class Command:
             return "Mon panier est vide"
         res: str = "Panier : \n"
         for b in self.basket:
-            res+= f"{b}"
+            res += f"{b}"
         return res
