@@ -19,7 +19,12 @@ class Client:  # Create a Client class.
         self.my_basket: Command = Command()
         Client.clients.append(self)
 
-    def __str__(self) -> str:  # Create a method __str__ in order to display
+    def __str__(self) -> str:
+        """
+        Create a method __str__ in order to display
+
+        :return: Customer Personal Data
+        """
         return (
             f"- Information Personelle -\n"
             f"Prénom: {self.first_name}\n"
