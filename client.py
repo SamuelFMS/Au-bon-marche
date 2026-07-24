@@ -53,7 +53,7 @@ class Client:  # Create a Client class.
                 index_fruit_vegetable: int = shop.get_list_name().index(sass)
                 res: FruitVegetable = shop.product_list[index_fruit_vegetable]
 
-                if res.quantity != 0:
+                if not res.is_out_of_stock():
                     break
                 print("Nous n'en avons plus en magasin.")
 

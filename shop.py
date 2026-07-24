@@ -50,7 +50,7 @@ class Shop:
 
         :return: Number of fruits and vegetables
         """
-        return len([product for product in self.product_list if product.quantity != 0])
+        return len([product for product in self.product_list if not product.is_out_of_stock()])
 
     def get_list_name(self) -> list[str]:
         """
