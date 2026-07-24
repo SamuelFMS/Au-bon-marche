@@ -37,8 +37,8 @@ class Command:
         :return: Total amount of the basket.
         """
         price = 0
-        for fv in self.basket:
-            price += fv.price_remain_stock()
+        for fruit_vegetable in self.basket:
+            price += fruit_vegetable.price_remain_stock()
         return round(price, 2)
 
     def add_to_basket(self, fruit_vegetable: FruitVegetable):
@@ -47,8 +47,8 @@ class Command:
 
         :param fruit_vegetable: The fruit or vegetable to add
         """
-        obj = next((fruit for fruit in self.basket if fruit.name == fruit_vegetable.name), None)
-        if obj:
-            obj.quantity += fruit_vegetable.quantity
+        fruit_vegetable_exist: FruitVegetable|None = next((fruit for fruit in self.basket if fruit.name == fruit_vegetable.name), None)
+        if fruit_vegetable_exist:
+            fruit_vegetable_exist.quantity += fruit_vegetable.quantity
         else:
             self.basket.append(fruit_vegetable)
