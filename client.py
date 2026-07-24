@@ -45,7 +45,7 @@ class Client:  # Create a Client class.
     def get_price_total(cls) -> float:
         """
         Calculation of the total price of the basket for each client
-        :param List client cls: is a list of clients
+
         :return: total price for each client
         """
         total = 0
