@@ -50,7 +50,7 @@ class Shop:
 
         :return: Number of fruits and vegetables
         """
-        return len(self.product_list)
+        return len([product for product in self.product_list if product.quantity != 0])
 
     def get_list_name(self) -> list[str]:
         """

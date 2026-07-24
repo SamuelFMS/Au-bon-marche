@@ -20,12 +20,15 @@ class FruitVegetable:
 
         :return: return a string representation of the fruitvegetable.
         """
-        display_fruit_vegetable: str = f"{self.name}: {self.quantity}"
-
-        if self.is_unit:
-            display_fruit_vegetable += " pièces\n"
+        if self.quantity <= 0:
+            display_fruit_vegetable: str = f"{self.name}: Hors Stock\n"
         else:
-            display_fruit_vegetable += "g\n"
+            display_fruit_vegetable: str = f"{self.name}: {self.quantity}"
+
+            if self.is_unit:
+                display_fruit_vegetable += " pièces\n"
+            else:
+                display_fruit_vegetable += "g\n"
 
         return display_fruit_vegetable
 
