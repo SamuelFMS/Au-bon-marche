@@ -25,8 +25,11 @@ def main():
                 break
             shop = new_client.select_fruit_and_vegetable_to_add_to_basket(shop)
 
-        print(new_client)
-        if ask_yes_or_no("Voulez vous finir la journée [y/yes/n/no]: "):
+        while not customer.end_command():
+            shop = customer.select_fruit_and_vegetable_to_add_to_basket(shop)
+
+        print(customer)
+        if ask_yes_or_no("Voulez-vous finir la journée [y/yes/n/no]: "):
             # Afficher le récapitulatif de la journée
             print("-" * 60)
             Client.afficher_liste_clients()
