@@ -44,7 +44,7 @@ class Client:  # Create a Client class.
         self.first_name = input("Veuillez entrez le prenom: ")
         self.last_name = input("Veuillez entrez le nom: ")
 
-    def add_to_basket(self, shop: Shop) -> Shop:
+    def select_fruit_and_vegetable_to_add_to_basket(self, shop: Shop) -> Shop:
         print(shop)
         while True:
             sass = input("Veuillez entrez le nom de l'article souhaitez: ")

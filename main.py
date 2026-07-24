@@ -18,12 +18,12 @@ def main():
         # Création d'un utilisateur
         new_client: Client = Client()
         new_client.register_user()
-        shop = new_client.add_to_basket(shop)
+        shop = new_client.select_fruit_and_vegetable_to_add_to_basket(shop)
 
         while True:
             if new_client.end_command():
                 break
-            shop = new_client.add_to_basket(shop)
+            shop = new_client.select_fruit_and_vegetable_to_add_to_basket(shop)
 
         print(new_client)
         if ask_yes_or_no("Voulez vous finir la journée [y/yes/n/no]: "):
