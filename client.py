@@ -60,7 +60,7 @@ class Client:  # Create a Client class.
         self.first_name = input("Veuillez entrez le prenom: ")
         self.last_name = input("Veuillez entrez le nom: ")
 
-    def add_to_basket(self, shop: Shop) -> Shop:
+    def select_fruit_and_vegetable_to_add_to_basket(self, shop: Shop) -> Shop:
         """
         Add a fruit or a vegetable to the basket
         :param shop: a list of products that includes fruits and vegetables
