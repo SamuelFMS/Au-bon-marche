@@ -23,10 +23,13 @@ def main():
         shop = customer.select_fruit_and_vegetable_to_add_to_basket(shop)
 
         while not customer.end_command():
+            if shop.is_fruits_vegetables_out_of_stock():
+                print("Notre boutique a été dévalisé. Fin de la commande.")
+                break
             shop = customer.select_fruit_and_vegetable_to_add_to_basket(shop)
 
         print(customer)
-        if ask_yes_or_no("Voulez-vous finir la journée [y/yes/n/no]: "):
+        if shop.is_fruits_vegetables_out_of_stock() or ask_yes_or_no("Voulez-vous finir la journée [y/yes/n/no]: "):
             # Afficher le récapitulatif de la journée
             print("-" * 60)
             Client.afficher_liste_clients()
