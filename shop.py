@@ -64,3 +64,11 @@ class Shop:
         :return: Names of fruits and vegetables
         """
         return [fruit_vegetable.name for fruit_vegetable in self.product_list]
+
+    def is_fruits_vegetables_out_of_stock(self):
+        """
+        Is the shop out of stocks
+
+        :return: True if the shop is out of stock
+        """
+        return self.nb_fruit_vegetable() == 0
