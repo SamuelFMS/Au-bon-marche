@@ -40,4 +40,8 @@ class Command:
 
         :param fruit_vegetable: The fruit or vegetable to add
         """
-        self.basket.append(fruit_vegetable)
+        obj = next((fruit for fruit in self.basket if fruit.name == fruit_vegetable.name), None)
+        if obj:
+            obj.quantity += fruit_vegetable.quantity
+        else:
+            self.basket.append(fruit_vegetable)
