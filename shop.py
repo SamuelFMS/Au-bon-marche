@@ -36,7 +36,13 @@ class Shop:
         self.product_list: list[FruitVegetable] = product_list
 
     def __str__(self) -> str:
-        display_balance_sheet: str = f"Nombre de fruit et de légumes restants: {str(self.nb_fruit_vegetable())}.\n"
+        """
+        Display all the fruit and vegetables available in-store, along with the number of each item in stock.
+
+        :return:Display balance sheet in the shop
+        """
+        display_balance_sheet: str = (f"Nombre d'article de fruits et de légumes restants:"
+                                      f"{str(self.nb_fruit_vegetable())}.\n")
         display_balance_sheet += "Voici le stock disponible:\n"
 
         for product in self.product_list:
