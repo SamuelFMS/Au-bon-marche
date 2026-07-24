@@ -25,7 +25,7 @@ class Client:  # Create a Client class.
             f"- Information Personelle -\n"
             f"Prénom: {self.first_name}\n"
             f"Nom: {self.last_name}\n"
-            f"{self.my_basket}\n"
+            f"{self.my_basket}€\n"
         )
 
     @classmethod
