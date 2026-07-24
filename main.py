@@ -15,21 +15,18 @@ def ask_yes_or_no(message: str):
 def main():
     shop: Shop = Shop()
     while True:
-        # Create a client
-        customer: Client = Client()
-        customer.register_user()
+        # Création d'un utilisateur
+        new_client: Client = Client()
+        new_client.register_user()
+        shop = new_client.add_to_basket(shop)
 
-        # Create command to a new client
-        shop = customer.select_fruit_and_vegetable_to_add_to_basket(shop)
-
-        while not customer.end_command():
-            if shop.is_fruits_vegetables_out_of_stock():
-                print("Notre boutique a été dévalisé. Fin de la commande.")
+        while True:
+            if new_client.end_command():
                 break
-            shop = customer.select_fruit_and_vegetable_to_add_to_basket(shop)
+            shop = new_client.add_to_basket(shop)
 
-        print(customer)
-        if shop.is_fruits_vegetables_out_of_stock() or ask_yes_or_no("Voulez-vous finir la journée [y/yes/n/no]: "):
+        print(new_client)
+        if ask_yes_or_no("Voulez vous finir la journée [y/yes/n/no]: "):
             # Afficher le récapitulatif de la journée
             print("-" * 60)
             Client.afficher_liste_clients()
