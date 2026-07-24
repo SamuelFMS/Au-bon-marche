@@ -13,6 +13,15 @@ def ask_yes_or_no(message: str):
 
 
 def main():
+    """
+    Main function:
+    1) Create the shop
+    2) Create the customer
+    3) Process the customer’s orders in the shop
+    4) Display a summary of the customer’s orders once they have been completed
+    5) Return to step 2 if it's not the end of the day or if the shop isn't out of stock
+    6) Display all customers and the shop’s daily till balance
+    """
     shop: Shop = Shop()
     while True:
         # Création d'un utilisateur
