@@ -13,7 +13,7 @@ class Client:  # Create a Client class.
 
     def __init__(self):
         """
-        Initialise first_name, last_name and my_basket.
+        Initialize first_name, last_name and my_basket.
         """
         self.first_name: str = ""
         self.last_name: str = ""
