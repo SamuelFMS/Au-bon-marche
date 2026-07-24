@@ -44,3 +44,11 @@ class FruitVegetable:
             price_stock_remain_fruit_vegetable = self.quantity / 1000 * self.price
 
         return price_stock_remain_fruit_vegetable
+
+    def is_out_of_stock(self) -> bool:
+        """
+        Return true if quantity is zero so out of stock
+        :return: return True if the quantity is zero
+        """
+        return self.quantity == 0
+        
