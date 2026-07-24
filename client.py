@@ -39,7 +39,7 @@ class Client:  # Create a Client class.
         total = 0
         for client in cls.clients:
             total += client.my_basket.price_of_basket()
-        return total
+        return round(total, 2)
 
     def register_user(self):
         self.first_name = input("Veuillez entrez le prenom: ")
