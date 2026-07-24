@@ -15,6 +15,11 @@ class Command:
         self.basket = basket
 
     def __str__(self) -> str:
+        """
+        Display the customer’s shopping basket, showing the total amount.
+
+        :return: Basket summary
+        """
         if len(self.basket) == 0:
             return "Mon panier est vide"
 
