@@ -1,5 +1,7 @@
 from client import Client
 from shop import Shop
+
+
 def ask_yes_or_no(message: str):
     while True:
         saisie = input(message).upper()
@@ -9,24 +11,30 @@ def ask_yes_or_no(message: str):
             return False
         print("Entrez y ou n")
 
+
 def main():
     shop: Shop = Shop()
     while True:
-        if ask_yes_or_no("Voulez vous finir la journée: "):
-            # Afficher le recupultatif de la journée
+        # Création d'un utilisateur
+        new_client: Client = Client()
+        new_client.register_user()
+        shop = new_client.add_to_basket(shop)
+
+        while True:
+            if new_client.end_command():
+                break
+            shop = new_client.add_to_basket(shop)
+
+        print(new_client)
+        if ask_yes_or_no("Voulez vous finir la journée [y/yes/n/no]: "):
+            # Afficher le récapitulatif de la journée
+            print("-" * 60)
             Client.afficher_liste_clients()
+            print(f"Recette de la journée: {Client.get_price_total()}€")
             break
-        else:
-            # Creation d'un utilisateur
-            new_client: Client = Client()
-            new_client.register_user()
-            while True:
-                if ask_yes_or_no("Voulez vous ajouter un article au panier: "):
-                    new_client.add_to_basket(shop)
-                else:
-                    break
-        
-  
-    
+
+    print(shop)
+
+
 if __name__ == '__main__':
     main()
