@@ -51,11 +51,16 @@ class Client:  # Create a Client class.
             sass = input("Veuillez entrez le nom de l'article souhaitez: ")
 
             if sass in shop.get_list_name():
-                break
-            print("Nous avons pas réussis a trouver l'article souhaitez")
+                index_fruit_vegetable: int = shop.get_list_name().index(sass)
+                res: FruitVegetable = shop.product_list[index_fruit_vegetable]
 
-        index_fruit_vegetable: int = shop.get_list_name().index(sass)
-        res: FruitVegetable = shop.product_list[index_fruit_vegetable]
+                if res.quantity != 0:
+                    break
+                print("Nous n'en avons plus en magasin.")
+
+            print("Nous avons pas réussis a trouver l'article souhaitez.")
+
+        quantity_in_shop = res.quantity
         quantity: int
 
         while True:
