@@ -17,9 +17,11 @@ class Command:
     def __str__(self) -> str:
         if len(self.basket) == 0:
             return "Mon panier est vide"
+
         res: str = "Panier : \n"
-        for b in self.basket:
-            res += b.__str__()
+        for fruit_vegetable in self.basket:
+            res += fruit_vegetable.__str__()
+
         res += f"Total de la commande: {self.price_of_basket()}"
         return res
 
