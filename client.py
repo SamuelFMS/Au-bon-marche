@@ -36,7 +36,6 @@ class Client:  # Create a Client class.
     def afficher_liste_clients(cls):
         """
         Display information for each client
-        :param list client cls: is a list of clients
         """
         print("Liste des clients\nPrénom, NOM")
         for client in cls.clients:
