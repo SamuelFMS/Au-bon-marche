@@ -44,7 +44,7 @@ class Shop:
         display_balance_sheet: str = f"Nombre de fruit et de légumes restants: {str(self.nb_fruit_vegetable())}.\n"
         display_balance_sheet += "Voici le stock disponible:\n"
 
-        for product in self.product_list:
+        for product in sorted(self.product_list, key=lambda product: product.name):
             display_balance_sheet += product.__str__()
 
         return display_balance_sheet
