@@ -1,10 +1,9 @@
+from copy import copy
 from typing import ClassVar
 
 from fruitvegetable import FruitVegetable
 from command import Command
 from shop import Shop
-
-import copy
 
 
 class Client:  # Create a Client class.
@@ -69,13 +68,14 @@ class Client:  # Create a Client class.
             if sass.isdigit():
                 quantity = int(sass)
                 if 0 < quantity <= res.quantity:
+                    res.quantity = quantity
                     break
                 print("Nous avons plus assez dans le stock")
             else:
                 print("Veuillez entrez un nombre valide")
 
-        self.my_basket.add_to_basket(copy.copy(res))
-        shop.product_list[index_fruit_vegetable].quantity -= quantity
+        self.my_basket.add_to_basket(copy(res))
+        shop.product_list[index_fruit_vegetable].quantity = quantity_in_shop - quantity
 
         return shop
 
