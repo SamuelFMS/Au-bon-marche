@@ -27,8 +27,8 @@ class Client:  # Create a Client class.
         """
         return (
             f"- Information Personelle -\n"
-            f"Prénom: {self.first_name}\n"
-            f"Nom: {self.last_name}\n"
+            f"Prénom: {self.first_name.capitalize()}\n"
+            f"Nom: {self.last_name.upper()}\n"
             f"{self.my_basket}€\n"
         )
 
